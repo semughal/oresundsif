@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102c25">
+<meta name="description" content="Öresunds Idrottsförening – gemenskap, idrott och glädje.">
+<title>Öresunds Idrottsförening</title>
+<style>
+:root {
+  --green:#102c25;
+  --light:#e5ecdf;
+  --cream:#f8f8f3;
+  --text:#25342d;
+  --muted:#68756d;
+  --accent:#b8d09e;
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth;scroll-padding-top:85px}
+body {
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:var(--cream);
+  line-height:1.65;
+}
+header {
+  background:rgba(248,248,243,.97);
+  position:sticky;top:0;z-index:10;
+  border-bottom:1px solid #e5e9e1;
+}
+nav {
+  max-width:1150px;margin:auto;padding:15px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo {
+  display:flex;align-items:center;gap:10px;
+  color:var(--green);font-weight:800;
+  text-decoration:none;letter-spacing:1px;
+}
+.logo-mark {
+  background:var(--green);color:white;
+  width:42px;height:42px;border-radius:50%;
+  display:grid;place-items:center;font-size:17px;
+}
+.navlinks {display:flex;gap:28px}
+.navlinks a {
+  color:var(--text);text-decoration:none;
+  font-size:14px;font-weight:600;
+}
+.navlinks a:hover {color:#718b5a}
+.menu {
+  display:none;background:none;border:0;
+  font-size:25px;color:var(--green);
+}
+.hero {
+  min-height:590px;display:flex;align-items:center;
+  color:white;background:
+  linear-gradient(90deg,rgba(8,29,23,.91),rgba(8,29,23,.2)),
+  url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=2000&q=85') center/cover;
+}
+.hero-inner {
+  max-width:1150px;width:100%;margin:auto;padding:90px 24px;
+}
+.eyebrow {
+  color:var(--accent);font-size:12px;
+  letter-spacing:3px;font-weight:bold;
+}
+h1 {font-size:clamp(42px,7vw,76px);line-height:1.08;
+max-width:760px;margin:18px 0}
+.hero p {font-size:19px;color:#e0e8df;max-width:560px}
+.btn {
+  display:inline-block;margin-top:22px;padding:14px 25px;
+  background:var(--accent);color:var(--green);
+  text-decoration:none;font-weight:bold;border-radius:4px;
+}
+.btn:hover {background:white}
+section {padding:90px 24px}
+.container {max-width:1100px;margin:auto}
+.section-label {
+  color:#748d60;font-size:12px;
+  letter-spacing:2px;font-weight:bold;
+}
+h2 {font-size:clamp(30px,4vw,43px);line-height:1.2;
+color:var(--green);margin:12px 0 20px}
+.intro {max-width:690px;color:var(--muted);font-size:17px}
+.features {
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:22px;margin-top:45px;
+}
+.feature {
+  padding:30px;background:white;border:1px solid #e8ebe4;
+  border-radius:7px;
+}
+.feature .number {font-size:30px;color:#80966e}
+.feature h3 {color:var(--green);margin:12px 0 8px}
+.feature p {color:var(--muted);margin:0}
+.about {background:var(--light)}
+.about-grid {
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:55px;align-items:center;
+}
+.about-image {
+  width:100%;height:380px;object-fit:cover;
+  border-radius:5px;
+}
+.values {list-style:none;padding:0}
+.values li {padding:10px 0;border-bottom:1px solid #ccd8c5}
+.values li:before {content:"✓";color:#657f50;font-weight:bold;margin-right:12px}
+.contact-grid {
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:55px;margin-top:35px;
+}
+.contact-card {
+  background:white;padding:30px;border-radius:7px;
+  border:1px solid #e8ebe4;
+}
+.contact-card a {color:#55754b}
+form {display:grid;gap:13px}
+input,textarea {
+  width:100%;padding:14px;border:1px solid #dce2d8;
+  background:#fff;border-radius:4px;font:inherit;
+}
+textarea {min-height:130px;resize:vertical}
+button.submit {
+  padding:14px;background:var(--green);color:white;
+  border:0;border-radius:4px;font-weight:bold;
+  cursor:pointer;
+}
+footer {
+  background:var(--green);color:#d9e3d8;
+  padding:35px 24px;text-align:center;
+}
+footer p {margin:5px;font-size:13px}
+@media(max-width:700px) {
+  .menu {display:block}
+  .navlinks {
+    display:none;position:absolute;top:72px;left:0;right:0;
+    background:var(--cream);padding:20px 25px;
+    flex-direction:column;gap:18px;
+    border-bottom:1px solid #ddd;
+  }
+  .navlinks.open {display:flex}
+  .features,.about-grid,.contact-grid {grid-template-columns:1fr}
+  section {padding:65px 22px}
+  .about-image {height:280px}
+  .hero {min-height:520px}
+}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<a class="logo" href="#home">
+<span class="logo-mark">Ö</span>
+<span>ÖRESUNDS IF</span>
+</a>
+<button class="menu" aria-label="Öppna meny"
+onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+<div class="navlinks">
+<a href="#home">Hem</a>
+<a href="#about">Om oss</a>
+<a href="#contact">Kontakt</a>
+</div>
+</nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="hero-inner">
+<div class="eyebrow">GEMENSKAP · IDROTT · GLÄDJE</div>
+<h1>Tillsammans skapar vi rörelse.</h1>
+<p>Välkommen till Öresunds Idrottsförening.
+En förening där människor möts, utvecklas
+och delar glädjen i idrotten.</p>
+<a class="btn" href="#about">LÄR KÄNNA OSS</a>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="section-label">VÅR FÖRENING</div>
+<h2>Mer än bara idrott.</h2>
+<p class="intro">
+Vi vill skapa en positiv miljö där alla kan känna sig
+välkomna. Genom rörelse och gemenskap bygger vi
+en stark förening och inspirerar varandra.
+</p>
+<div class="features">
+<article class="feature">
+<div class="number">01</div>
+<h3>Gemenskap</h3>
+<p>Vi bygger vänskap och en inkluderande miljö
+där alla får vara med.</p>
+</article>
+<article class="feature">
+<div class="number">02</div>
+<h3>Utveckling</h3>
+<p>Vi uppmuntrar lärande, engagemang
+och personlig utveckling.</p>
+</article>
+<article class="feature">
+<div class="number">03</div>
+<h3>Idrottsglädje</h3>
+<p>Vi tror på glädjen i rörelse och
+kraften i att göra saker tillsammans.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="about" id="about">
+<div class="container about-grid">
+<div>
+<div class="section-label">OM ÖRESUNDS IF</div>
+<h2>En förening med hjärtat på rätt plats.</h2>
+<p>Öresunds Idrottsförening vill vara en mötesplats
+för människor som delar intresset för idrott och
+gemenskap.</p>
+<p>Vi strävar efter att skapa en trygg, välkomnande
+och inspirerande föreningsmiljö där varje medlem
+kan känna sig uppskattad.</p>
+<ul class="values">
+<li>Respekt och gemenskap</li>
+<li>Glädje och delaktighet</li>
+<li>Utveckling och engagemang</li>
+<li>En positiv idrottsmiljö</li>
+</ul>
+</div>
+<img class="about-image"
+src="https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&w=1000&q=85"
+alt="Idrottare som tränar tillsammans">
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="section-label">KONTAKTA OSS</div>
+<h2>Vi vill gärna höra från dig.</h2>
+<p class="intro">Vill du veta mer om föreningen,
+samarbeta med oss eller komma i kontakt med
+vårt team? Skicka ett meddelande.</p>
+<div class="contact-grid">
+<div class="contact-card">
+<h3>Öresunds Idrottsförening</h3>
+<p>Vi välkomnar frågor från medlemmar,
+familjer och alla som är intresserade av
+vår verksamhet.</p>
+<p><strong>E-post:</strong><br>
+<a href="mailto:INFO@DIN-DOMAN.SE">INFO@DIN-DOMAN.SE</a></p>
+<p><strong>Ort:</strong><br>Öresundsregionen</p>
+<p><em>Uppdatera kontaktuppgifterna innan publicering.</em></p>
+</div>
+<div class="contact-card">
+<h3>Skicka ett meddelande</h3>
+<form id="contactForm">
+<input name="name" placeholder="Ditt namn" required>
+<input name="email" type="email" placeholder="Din e-postadress" required>
+<textarea name="message" placeholder="Ditt meddelande" required></textarea>
+<button class="submit" type="submit">SKICKA MEDDELANDE</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<strong>ÖRESUNDS IDROTTSFÖRENING</strong>
+<p>Gemenskap · Idrott · Glädje</p>
+<p>© <span id="year"></span> Öresunds Idrottsförening</p>
+</footer>
+
+<script>
+document.getElementById('year').textContent =
+new Date().getFullYear();
+
+document.getElementById('contactForm').addEventListener('submit',
+function(event) {
+ event.preventDefault();
+ const data = new FormData(this);
+ const recipient = 'INFO@DIN-DOMAN.SE';
+ const subject = encodeURIComponent('Meddelande från webbplatsen');
+ const body = encodeURIComponent(
+ 'Namn: '+data.get('name')+
+ '\nE-post: '+data.get('email')+
+ '\n\nMeddelande:\n'+data.get('message')
+ );
+ window.location.href =
+ 'mailto:'+recipient+'?subject='+subject+'&body='+body;
+});
+
+document.querySelectorAll('.navlinks a').forEach(link => {
+ link.addEventListener('click', () =>
+ document.querySelector('.navlinks').classList.remove('open'));
+});
+</script>
+</body>
+</html>
